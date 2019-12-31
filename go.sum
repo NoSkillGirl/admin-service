@@ -1,0 +1,4 @@
+github.com/NoSkillGirl/user-service v0.0.0-20191227140616-bf8a6475f7cc h1:eqqOvU2vi72McGbeMn7SLGfh/qHD0n3K6YuYqTLSX4E=
+github.com/NoSkillGirl/user-service v0.0.0-20191227140616-bf8a6475f7cc/go.mod h1:r4F3hkuOBbinIeaYwPhsviiaM293Xiq4hp9gTv1ktII=
+github.com/go-sql-driver/mysql v1.4.1 h1:g24URVg0OFbNUTx9qqY1IRZ9D9z3iPyi5zKhQZpNwpA=
+github.com/go-sql-driver/mysql v1.4.1/go.mod h1:zAC/RDZ24gD3HViQzih4MyKcchzm+sOG5ZlKdlhCg5w=
