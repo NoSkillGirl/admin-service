@@ -11,10 +11,16 @@ var (
 	db  *sql.DB
 )
 
+const mySQLHost = "34.93.137.151"
+
+var mySQLConnection = fmt.Sprintf("root:password@tcp(%s)/tour_travel", mySQLHost)
+
 //AddCompany function
 func AddCompany(name, ownerName, phoneNo string) (errOccured, duplicateExist bool) {
 	ctx := context.Background()
-	db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)/tour_travel")
+	// mySQLConnection := "root:password@tcp(%s)/tour_travel"
+	// mySQLConnection = fmt.Sprintf(mySQLConnection, mySQLHost)
+	db, err := sql.Open("mysql", mySQLConnection)
 	// if there is an error opening the connection, handle it
 	if err != nil {
 		fmt.Println(err)
@@ -53,7 +59,8 @@ func AddCompany(name, ownerName, phoneNo string) (errOccured, duplicateExist boo
 //AddBus function
 func AddBus(number string, ac bool, sleeper bool, totalSeats int, source string, destination string, companyID int, departureTime string, arrivalTime string) (errOccured, duplicateExist bool) {
 	ctx := context.Background()
-	db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)/tour_travel")
+	// db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)/tour_travel")
+	db, err := sql.Open("mysql", mySQLConnection)
 	// if there is an error opening the connection, handle it
 	if err != nil {
 		fmt.Println(err)

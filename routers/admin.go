@@ -6,8 +6,8 @@ import (
 	"github.com/NoSkillGirl/admin-service/controllers"
 )
 
-// AuthRoutes - All User related Routes
-func AuthRoutes() {
+// AdminRoutes - All User related Routes
+func AdminRoutes() {
 	http.HandleFunc("/admin/company/new", controllers.NewCompany)
 	http.HandleFunc("/admin/buses/new", controllers.NewBus)
 }

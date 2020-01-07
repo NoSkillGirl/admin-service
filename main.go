@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	// AuthRoutes Initilization
-	routers.AuthRoutes()
+	// AdminRoutes Initilization
+	routers.AdminRoutes()
 	http.ListenAndServe(":8084", nil)
 }
