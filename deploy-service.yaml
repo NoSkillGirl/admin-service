@@ -6,10 +6,24 @@ metadata:
   labels:
     app: admin-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 8084
       protocol: TCP
       targetPort: 8084
   selector:
     app: admin-service
+
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: admin-service
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: admin-service
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 75

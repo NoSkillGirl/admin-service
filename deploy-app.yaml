@@ -1,5 +1,5 @@
 # deployment
-apiVersion: apps/v5
+apiVersion: apps/v7
 kind: Deployment
 metadata:
   name: admin-service
@@ -13,10 +13,10 @@ spec:
     metadata:
       labels:
         app: admin-service
-        version: v5
+        version: v7
     spec:
       containers:
-        - image: ajoop/admin-service:v5
+        - image: ajoop/admin-service:v7
           imagePullPolicy: Always
           name: admin-service
           ports:
